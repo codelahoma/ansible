@@ -11,9 +11,6 @@
 - name: install spacemacs
   ansible.builtin.git:
     repo: https://github.com/syl20bnr/spacemacs
-    dest: ~/.emacs.d
+    dest: "~/.emacs.d"
+    version: "develop"
 
-- name: checkout spacemacs develop branch
-  ansible.builtin.shell:
-    chdir: ~/.emacs.d
-    cmd: git checkout develop
