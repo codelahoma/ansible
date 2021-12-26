@@ -4,5 +4,6 @@
       include_vars: 
         dir: private
 
-    - include_tasks:
+    - include:
         - tasks/casks.yml
+        - tasks/emacs.yml
