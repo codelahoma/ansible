@@ -1,10 +1,10 @@
 - hosts: localhost
   tasks:
-    - name: import vars
-      include_vars:
-        dir: private
+  - name: import vars
+    include_vars:
+      dir: private
 
-    - include_tasks: tasks/casks.yml
-    - include_tasks: tasks/emacs.yml
-    - include_tasks: tasks/zsh.yml
-    - include_tasks: tasks/dotfiles.yml
+  - include_tasks: tasks/casks.yml
+  - include_tasks: tasks/emacs.yml
+  - include_tasks: tasks/zsh.yml
+  - include_tasks: tasks/dotfiles.yml
