@@ -1,0 +1,5 @@
+- name: install iterm
+  community.general.homebrew:
+      name: iTerm2
+      state: absent
+

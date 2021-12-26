@@ -1,3 +1,0 @@
-- name: confirm vars
-  ansible.builtin.debug:
-    msg: Sudo password is {{ sudo_pass  }}
