@@ -6,3 +6,4 @@
 
     - include_tasks: tasks/casks.yml
     - include_tasks: tasks/emacs.yml
+    - include_tasks: tasks/zsh.yml
