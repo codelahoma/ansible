@@ -1,0 +1,6 @@
+- hosts: localhost
+  tasks:
+    - name: import vars
+      include_vars: 
+        dir: private
+    - include: task.yml
