@@ -14,7 +14,7 @@
 
 - name: check if Alfred is installed
   stat:
-    path: "/Application/Alfred 4.app"
+    path: "/Applications/Alfred 4.app"
   register: alfred_stats
 
 - name: install Alfred
@@ -28,7 +28,7 @@
 
 - name: check if Dropbox is installed
   stat:
-    path: /Application/Dropbox.app
+    path: /Applications/Dropbox.app
   register: dropbox_stats
 
 - name: debugging dropbox install
