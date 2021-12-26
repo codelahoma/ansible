@@ -14,6 +14,11 @@
   ansible.builtin.shell:
     cmd: homeshick clone https://github.com/codelahoma/dotfiles.git
 
+- name: checkout m1 branch
+  ansible.builtin.shell:
+    chdir: ~/.homesick/repos/dotfiles
+    cmd: git checkout m1
+
 - name: link dotfiles castle
   ansible.builtin.shell:
     cmd: homeshick link dotfiles --force
