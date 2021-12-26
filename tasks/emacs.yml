@@ -6,3 +6,9 @@
   community.general.homebrew_cask:
     path: /opt/homebrew/bin
     name: emacs-plus
+
+
+- name: install spacemacs
+  ansible.builtin.git:
+    repo: https://github.com/syl20bnr/spacemacs
+    dest: ~/.emacs.d
