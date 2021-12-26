@@ -1,27 +1,82 @@
+- name: check whether iTerm is installed
+  stat:
+    path: /Applications/iTerm.app
+  register: iterm_stats
+
 - name: install iTerm2
-  community.general.homebrew_cask:
-    name: iTerm2
-    path: /opt/homebrew/bin
+  when: "not iterm_stats.stat.exists"
+  block:
+    - name: install cask
+      community.general.homebrew_cask:
+        name: iTerm2
+        path: /opt/homebrew/bin
+
+
+- name: check if Alfred is installed
+  stat:
+    path: /Application/Alfred.app
+  register: alfred_stats
+
 - name: install Alfred
-  community.general.homebrew_cask:
-    name: alfred
-    path: /opt/homebrew/bin
-- name: install dropbox
-  community.general.homebrew_cask:
-    name: dropbox
-    path: /opt/homebrew/bin
+  when: "not alfred_stats.stat.exists"
+  block:
+    - name: install Alfred cask
+      community.general.homebrew_cask:
+        name: alfred
+        path: /opt/homebrew/bin
+
+
+- name: check if Dropbox is installed
+  stat:
+    path: /Application/Dropbox.app
+  register: dropbox_stats
+
+- name: install Dropbox
+  when: "not dropbox_stats.stat.exists"
+  block:
+    - name: install Dropbox cask
+      community.general.homebrew_cask:
+        name: dropbox
+        path: /opt/homebrew/bin
+
+- name: check if Hammerspoon is installed
+  stat:
+    path: /Application/Hammerspoon.app
+  register: hammerspoon_stats
+
 - name: install Hammerspoon
-  community.general.homebrew_cask:
-    name: hammerspoon
-    path: /opt/homebrew/bin
+  when: "not hammerspoon_stats.stat.exists"
+  block:
+    - name: install Hammerspoon cask
+      community.general.homebrew_cask:
+        name: hammerspoon
+        path: /opt/homebrew/bin
+
+- name: check whether Spotify is installed
+  stat:
+    path: /Applications/Spotify.app
+  register: spotify_stats
+
 - name: install Spotify
-  community.general.homebrew_cask:
-    name: spotify
-    path: /opt/homebrew/bin
+  when: "not spotify_stats.stat.exists"
+  block:
+    - name: install spotify cask
+      community.general.homebrew_cask:
+        name: spotify
+        path: /opt/homebrew/bin
+
+- name: check whether 1Password is installed
+  stat:
+    path: "/Applications/1Password 7.app"
+  register: one_password_stats
+
 - name: install 1Password
-  community.general.homebrew_cask:
-    name: 1password
-    path: /opt/homebrew/bin
+  when: "not one_password_stats.stat.exists"
+  block:
+    - name: install 1password cask
+      community.general.homebrew_cask:
+        name: 1password
+        path: /opt/homebrew/bin
 
 - name: tap fonts cask
   community.general.homebrew_tap:

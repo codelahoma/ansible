@@ -10,11 +10,19 @@
     state: directory
     mode: '0755'
 
-- name: clone dotfiles castle
-  ansible.builtin.git:
-    repo: https://github.com/codelahoma/dotfiles.git
-    dest: "~/.homesick/repos/dotfiles"
-    version: "m1"
+- name: check if dotfiles castle present
+  stat:
+    path: ~/.homesick/repos/dotfiles
+  register: dotfiles_stats
+
+- name: clone dotfiles castle if not there
+  when: "not dotfiles_stats.stat.exists"
+  block:
+    - name: clone dotfiles castle
+      ansible.builtin.git:
+        repo: https://github.com/codelahoma/dotfiles.git
+        dest: "~/.homesick/repos/dotfiles"
+        version: "m1"
 
 
 - name: link dotfiles castle
