@@ -1,5 +1,4 @@
 - hosts: localhost
-  tags: spacemacs
   tasks:
   - name: tap emacs-plus cask
     community.general.homebrew_tap:
