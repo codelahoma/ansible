@@ -1,6 +1,0 @@
-- name: install iterm
-  community.general.homebrew_cask:
-      name: iTerm2
-      path: /opt/homebrew/bin
-      state: present
-

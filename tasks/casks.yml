@@ -1,0 +1,48 @@
+- name: install iTerm2
+  community.general.homebrew_cask:
+    name: iTerm2
+    path: /opt/homebrew/bin
+- name: install Alfred
+  community.general.homebrew_cask:
+    name: alfred
+    path: /opt/homebrew/bin
+- name: install dropbox
+  community.general.homebrew_cask:
+    name: dropbox
+    path: /opt/homebrew/bin
+- name: install Hammerspoon
+  community.general.homebrew_cask:
+    name: hammerspoon
+    path: /opt/homebrew/bin
+- name: install Spotify
+  community.general.homebrew_cask:
+    name: spotify
+    path: /opt/homebrew/bin
+- name: install 1Password
+  community.general.homebrew_cask:
+    name: 1password
+    path: /opt/homebrew/bin
+
+- name: tap fonts cask
+  community.general.homebrew_tap:
+    name: homebrew/cask-fonts
+    path: /opt/homebrew/bin
+- name: install svn for font repos
+  community.general.homebrew:
+    path: /opt/homebrew/bin
+    name: svn
+- name: install fonts
+  community.general.homebrew_cask:
+    path: /opt/homebrew/bin
+    name:
+      - "font-3270-nerd-font"
+      - "font-cousine-nerd-font"
+      - "font-hack-nerd-font"
+      - "font-im-writing-nerd-font"
+      - "font-inconsolata-for-powerline"
+      - "font-inconsolata-g-for-powerline"
+      - "font-inconsolata-nerd-font"
+      - "font-iosevka"
+      - "font-iosevka-nerd-font"
+      - "font-sourcecodepro-nerd-font"
+      - "font-victor-mono-nerd-font"
