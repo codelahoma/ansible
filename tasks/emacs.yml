@@ -3,7 +3,7 @@
     path: /opt/homebrew/bin
     name: d12frosted/emacs-plus
 - name: install emacs-plus
-  community.general.homebrew_cask:
+  community.general.homebrew:
     path: /opt/homebrew/bin
     name: emacs-plus
 
