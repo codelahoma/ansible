@@ -1,9 +1,8 @@
 - hosts: localhost
   tasks:
     - name: import vars
-      include_vars: 
+      include_vars:
         dir: private
 
-    - include:
-        - tasks/casks.yml
-        - tasks/emacs.yml
+    - include_tasks: tasks/casks.yml
+    - include_tasks: tasks/emacs.yml
