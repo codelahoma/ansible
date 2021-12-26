@@ -31,10 +31,6 @@
     path: /Applications/Dropbox.app
   register: dropbox_stats
 
-- name: debugging dropbox install
-  ansible.builtin.debug:
-    msg: "Dropbox: {{ dropbox_stats }}"
-
 - name: install Dropbox
   when: "not dropbox_stats.stat.exists"
   block:
