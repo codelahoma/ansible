@@ -1,0 +1,8 @@
+- name: tap emacs-plus cask
+  community.general.homebrew_tap:
+    path: /opt/homebrew/bin
+    name: d12frosted/emacs-plus
+- name: install emacs-plus
+  community.general.homebrew_cask:
+    path: /opt/homebrew/bin
+    name: emacs-plus
