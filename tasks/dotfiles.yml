@@ -11,13 +11,11 @@
     mode: '0755'
 
 - name: clone dotfiles castle
-  ansible.builtin.shell:
-    cmd: homeshick clone https://github.com/codelahoma/dotfiles.git
+  ansible.builtin.git:
+    repo: https://github.com/codelahoma/dotfiles.git
+    dest: "~/.homesick/repos/dotfiles"
+    version: "m1"
 
-- name: checkout m1 branch
-  ansible.builtin.shell:
-    chdir: ~/.homesick/repos/dotfiles
-    cmd: git checkout m1
 
 - name: link dotfiles castle
   ansible.builtin.shell:
