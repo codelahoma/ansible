@@ -4,7 +4,43 @@
     include_vars:
       dir: private
 
-  - include_tasks: tasks/casks.yml
-  - include_tasks: tasks/emacs.yml
-  - include_tasks: tasks/zsh.yml
-  - include_tasks: tasks/dotfiles.yml
+  - name: cask tasks
+    include_tasks:
+      file: tasks/casks.yml
+      apply:
+        tags:
+          - casks
+    tags: casks
+
+  - name: tmux tasks
+    include_tasks:
+      file: tasks/tmux.yml
+      apply:
+        tags:
+          - tmux
+    tags: tmux
+
+  - name: emacs tasks
+    include_tasks:
+      file: tasks/emacs.yml
+      apply:
+        tags:
+          - emacs
+    tags: emacs
+
+  - name: zsh tasks
+    include_tasks:
+      file: tasks/zsh.yml
+      apply:
+        tags:
+          - zsh
+    tags: zsh
+
+  - name: dotfiles tasks
+    include_tasks:
+      file: tasks/dotfiles.yml
+      apply:
+        tags:
+          - dotfiles
+    tags: dotfiles
+
